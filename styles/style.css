@@ -316,4 +316,15 @@ header button {
 }
 .creaturesShowcase div img:hover {
   filter: drop-shadow(10px -10px 10px black) drop-shadow(-10px 10px 10px black);
+}
+
+footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 20vh;
+  background-color: #0f1216;
+}
+footer * {
+  color: white;
 }/*# sourceMappingURL=style.css.map */
