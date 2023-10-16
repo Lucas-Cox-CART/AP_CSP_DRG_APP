@@ -1,23 +1,50 @@
 body {
     margin: 0;
     padding: 0;
+    overflow-x: hidden;
 }
 
 nav {
-    height: 100%;
-    width: 20%;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
+    height: 95vh;
+    width: 15%;
     background-color: yellow;
-    position: absolute;
-    left: -273px;
+    position: fixed;
+    left: -20%;
+    top: 5vh;
+    z-index: 5;
     animation-name: none;
     animation-duration: 600ms;
     animation-timing-function: ease-in-out;
     animation-fill-mode: both;
+
+    * {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 10%;
+        width: 60%;
+        color: black;
+        text-decoration: none;
+        font-size: 1.7em;
+        user-select: none;
+    }
+
+    *:active {
+        color: black;
+    }
+
+    *:visited {
+        color: black;
+    }
 }
 
 @keyframes navSlide {
     0% {
-        left: -273px;
+        left: -20%;
     }
     100% {
         left: 0px;
@@ -29,14 +56,21 @@ nav {
         left: 0px
     }
     100% {
-        left: -273px;
+        left: -20%;
     }
 }
 
 header {
     display: flex;
     justify-content: center;
-    background-color: black;
+    align-items: center;
+    background-color: rgba(12,16,21,255);
+    height: 5vh;
+    width: 100%;
+    position: fixed;
+    z-index: 1;
+    border-bottom: 3px solid rgb(20, 26, 33);
+    box-shadow: 0px 2px 10px 2px rgb(12,16,21), inset 0px -2px 10px 2px rgb(12,16,21);
 
     * {
         color: white;
@@ -44,9 +78,270 @@ header {
 
     button {
         position: absolute;
-        left: 40px;
-        top: 30px;
+        left: 2%;
+        top: 15px;
         width: 20px;
         height: 20px;
+    }
+}
+
+.hero-image {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: url(../images/hero-image.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    height: 100vh;
+    width: 100%;
+
+    p {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 25%;
+        width: 45%;
+        background-color: rgba(99, 99, 99, 0.55);
+        color: white;
+        font-size: 5em;
+        font-weight: bolder;
+        -webkit-text-stroke-width: 2px;
+        -webkit-text-stroke-color: black;
+        border: 1px solid black;
+        border-radius: 25px;
+        margin: 0;
+        padding: 0;
+    }
+}
+
+.slogan {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 10vh;
+    width: 100%;
+    background-color: rgba(12,16,21,255);
+    box-shadow: 0px -10px 90px 100px rgba(12,16,21,255);
+    border-bottom: 1px solid rgb(20, 26, 33);
+    border-top: 1px solid rgb(20, 26, 33);
+
+    p {
+        color: white;
+    }
+}
+
+.classShowcase {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100%;
+    background-color: rgba(12,16,21,255);
+    border-bottom: 1px solid rgb(20, 26, 33);
+
+    p {
+        color: white;
+    }
+
+    img {
+        width: 50%;
+        height: 100%;
+    }
+}
+
+.show-right {
+    flex-direction: row;
+}
+
+.show-left {
+    flex-direction: row-reverse;
+}
+
+.hoxxesShowcase {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 110vh;
+    width: 100%;
+    background-color: rgba(12,16,21,255);
+    border-bottom: 1px solid rgb(20, 26, 33);
+
+    .hoxxesSubtitle {
+        color: white;
+        position: relative;
+        top: -42%;
+        font-size: 2.5em;
+    }
+
+    .carousel-button {
+        height: 25px;
+        width: 25px;
+        background: transparent;
+        z-index: 4;
+        position: absolute;
+        border: solid white;
+        border-width: 0 3px 3px 0;
+        display: inline-block;
+        padding: 3px;   
+    }
+
+    #carousel-buttonLeft {
+        left: 13%;
+        transform: rotate(135deg);
+        -webkit-transform: rotate(135deg);
+    }
+
+    #carousel-buttonRight {
+        left: 86%;
+        transform: rotate(-45deg);
+        -webkit-transform: rotate(-45deg);
+    }
+
+    .carousel-item {
+        height: 80%;
+        width: 70%;
+        position: absolute;
+    }
+
+    #carouselItem1 {
+        left: -100%;    
+        background-color: magenta;
+        z-index: 3;
+        transition-duration: 1s;
+    }
+
+    #carouselItem2 {
+        left: 15%;
+        background-color: aqua;
+        transition-duration: 1s;   
+    }
+
+    #carouselItem3 {
+        left: 100%;
+        background-color: crimson;
+        transition-duration: 1s;
+    }
+
+    #carouselItem4 {
+        left: 100%;
+        background-color: orange;
+        transition-duration: 1s;
+    }
+}
+
+.missionsShowcase {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100%;
+    background-color: black;
+    border-bottom: 1px solid rgb(20, 26, 33);
+    background-color: rgba(12,16,21,255);
+
+    .missionsSubtitle {
+        color: white;
+        position: relative;
+        top: -5%;
+        font-size: 2.5em;
+    }
+
+    article {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+    }
+}
+
+.mission-normal {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 30vh;
+    width: 15vw;
+    color: white;
+    background-color: #161b22;
+    border: 2px solid #30363d;
+    border-radius: 20px;
+    animation-name: missionNormal;
+    animation-duration: 600ms;
+    animation-fill-mode: both;
+    animation-timing-function: linear;
+    margin: 10px;
+
+    img {
+        display: inline;
+        height: 100%;
+        width: 100%;
+        border-radius: 20px;
+        transition: 600ms;
+    }
+
+    p {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100%;
+        width: 0%;
+        opacity: 0;
+        transition: 600ms;
+    }
+}
+
+@keyframes missionNormal {
+    0% {
+        transform: rotate3d(0, 0, 0, 0deg);
+    }
+    100% {
+        transform: rotate3d(-1, -2, 0, 40deg);
+    }
+}
+
+@keyframes missionHover {
+    0% {
+        transform: rotate3d(-1, -2, 0, 40deg);
+    }    
+    100% {
+        transform: rotate3d(0, 0, 0, 0deg);
+    }
+}
+
+.creaturesShowcase {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100%;
+    background-color: black;
+    border-bottom: 1px solid rgb(20, 26, 33);
+    background-color: rgba(12,16,21,255);
+
+    .creaturesSubtitle {
+        color: white;
+        position: relative;
+        top: 0%;
+        font-size: 2.5em;
+    }
+
+    div {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        width: 80%;
+        height: 40%;
+
+        img {
+            height: 100%;
+        }
+
+        img:hover {
+            filter: drop-shadow(10px -10px 10px black) drop-shadow(-10px 10px 10px black);
+        }
     }
 }
