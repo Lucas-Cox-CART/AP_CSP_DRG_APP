@@ -1,3 +1,6 @@
+let width = window.innerWidth;
+let height = window.innerHeight;
+
 let navbar = document.getElementById("navbar");
 let navButton = document.getElementById("navButton");
 
@@ -164,4 +167,21 @@ for (let i = 0; i < 8; i++) {
 
     }, 16);
 
+}
+
+let navLinks = document.getElementsByClassName("navLink");
+window.addEventListener('resize', () => {
+    navLinks.style.fontSize = `${width/1130}em`;
+});
+
+let bugs = [];
+let bugTexts = [];
+
+for (let i = 0; i < 4; i++) {
+    bugs[i] = document.getElementById(`bug${[i]}`);
+    bugTexts[i] = document.getElementById(`bugText${[i]}`);
+
+    bugs[i].addEventListener('mouseover', () => {
+        bugTexts[i].style.width = "200px";
+    });
 }

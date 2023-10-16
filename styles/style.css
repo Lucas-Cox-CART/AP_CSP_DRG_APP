@@ -29,7 +29,6 @@ nav * {
   width: 60%;
   color: black;
   text-decoration: none;
-  font-size: 1.7em;
   -webkit-user-select: none;
      -moz-user-select: none;
           user-select: none;
@@ -100,7 +99,7 @@ header button {
   width: 45%;
   background-color: rgba(99, 99, 99, 0.55);
   color: white;
-  font-size: 5em;
+  font-size: 4em;
   font-weight: bolder;
   -webkit-text-stroke-width: 2px;
   -webkit-text-stroke-color: black;
@@ -317,7 +316,9 @@ header button {
 .creaturesShowcase div img:hover {
   filter: drop-shadow(10px -10px 10px black) drop-shadow(-10px 10px 10px black);
 }
-
+.creaturesShowcase #bugText0 {
+  position: relative;
+}
 footer {
   display: flex;
   justify-content: center;
