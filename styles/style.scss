@@ -353,9 +353,9 @@ header {
         align-items: center;
         background-color: #161b22;
         position: relative;
-        top: -70%;
+        top: 0%;
         width: 0px;
-        left: -28%;
+        left: -3%;
         border: 2px solid #30363d;
         border-radius: 20px;
         transition: 500ms;
@@ -363,6 +363,12 @@ header {
         * {
             color: white;
         }
+    }
+
+    #bugText0_inner {
+        transition: 500ms;
+        max-height: 200px;
+        opacity: 0;
     }
 }
 

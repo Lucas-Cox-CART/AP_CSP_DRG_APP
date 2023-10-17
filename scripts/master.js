@@ -180,13 +180,29 @@ window.addEventListener('resize', () => {
     navLinks[i].style.fontSize = `${width/1130}em`;
 });
 
-let bugText0 = document.getElementById("bugText0");
+let bugText0_outer = document.getElementById("bugText0_outer");
+let bugText0_inner = document.getElementById("bugText0_inner");
 let bug0 = document.getElementById("bug0");
 
 bug0.addEventListener('mouseover', () => {
-    bugText0.style.display = "flex";
-    bugText0.style.width = "200px";
+    bugText0_inner.style.display = "flex";
+    bugText0_outer.style.width = "200px";
+    bugText0_outer.style.height = "200px";
+    bugText0_outer.style.border = "2px solid #30363d";
+    bugText0_outer.style.backgroundColor = "transparent";
+    bugText0_inner.style.opacity = "1";
+    bugText0_inner.style.fontSize = "1em";
 });
+
+bug0.addEventListener('mouseout', () => {
+    bugText0_outer.style.width = "0px";
+    bugText0_outer.style.height = "0px";
+    bugText0_outer.style.border = "1px solid white";
+    bugText0_outer.style.backgroundColor = "#161b22";
+    bugText0_inner.style.opacity = "0";
+    bugText0_inner.style.fontSize = "0em";
+});
+
 
 // let bugs = [];
 // let bugTexts = [];
