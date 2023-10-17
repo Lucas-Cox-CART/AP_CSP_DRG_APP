@@ -143,6 +143,7 @@ header {
 
     p {
         color: white;
+        margin: 10%;
     }
 
     img {
@@ -338,6 +339,7 @@ header {
 
         img {
             height: 100%;
+            transition: 500ms;
         }
 
         img:hover {
@@ -345,30 +347,22 @@ header {
         }
     }
 
-    // .bugText {
-    //     display: flex;
-    //     justify-content: center;
-    //     align-items: center;
-    //     background-color: yellow;
-    //     width: 200px;
-    //     height: 200px;
-    //     position: relative;
-    // }
+    .bugText {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: #161b22;
+        position: relative;
+        top: -70%;
+        width: 0px;
+        left: -28%;
+        border: 2px solid #30363d;
+        border-radius: 20px;
+        transition: 500ms;
 
-    #bugText0 {
-        position: relative; 
-    }
-
-    #bugText1 {
-        
-    }
-
-    #bugText2 {
-        
-    }
-
-    #bugText3 {
-        
+        * {
+            color: white;
+        }
     }
 }
 

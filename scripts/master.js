@@ -169,19 +169,33 @@ for (let i = 0; i < 8; i++) {
 
 }
 
-let navLinks = document.getElementsByClassName("navLink");
+let navLinks = [];
+
+for (let i = 0; i < 8; i++) {
+    navLinks[i] = document.getElementById(`navLink${[i]}`);
+    navLinks[i].style.fontSize = `${width/1130}em`;
+}
+
 window.addEventListener('resize', () => {
-    navLinks.style.fontSize = `${width/1130}em`;
+    navLinks[i].style.fontSize = `${width/1130}em`;
 });
 
-let bugs = [];
-let bugTexts = [];
+let bugText0 = document.getElementById("bugText0");
+let bug0 = document.getElementById("bug0");
 
-for (let i = 0; i < 4; i++) {
-    bugs[i] = document.getElementById(`bug${[i]}`);
-    bugTexts[i] = document.getElementById(`bugText${[i]}`);
+bug0.addEventListener('mouseover', () => {
+    bugText0.style.display = "flex";
+    bugText0.style.width = "200px";
+});
 
-    bugs[i].addEventListener('mouseover', () => {
-        bugTexts[i].style.width = "200px";
-    });
-}
+// let bugs = [];
+// let bugTexts = [];
+
+// for (let i = 0; i < 4; i++) {
+//     bugs[i] = document.getElementById(`bug${[i]}`);
+//     bugTexts[i] = document.getElementById(`bugText${[i]}`);
+
+//     bugs[i].addEventListener('mouseover', () => {
+//         bugTexts[i].style.width = "200px";
+//     });
+// }

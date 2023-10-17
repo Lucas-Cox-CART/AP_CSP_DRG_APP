@@ -135,6 +135,7 @@ header button {
 }
 .classShowcase p {
   color: white;
+  margin: 10%;
 }
 .classShowcase img {
   width: 50%;
@@ -312,13 +313,28 @@ header button {
 }
 .creaturesShowcase div img {
   height: 100%;
+  transition: 500ms;
 }
 .creaturesShowcase div img:hover {
   filter: drop-shadow(10px -10px 10px black) drop-shadow(-10px 10px 10px black);
 }
-.creaturesShowcase #bugText0 {
+.creaturesShowcase .bugText {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #161b22;
   position: relative;
+  top: -70%;
+  width: 0px;
+  left: -28%;
+  border: 2px solid #30363d;
+  border-radius: 20px;
+  transition: 500ms;
 }
+.creaturesShowcase .bugText * {
+  color: white;
+}
+
 footer {
   display: flex;
   justify-content: center;
