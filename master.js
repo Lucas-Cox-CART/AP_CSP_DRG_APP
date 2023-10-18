@@ -209,3 +209,32 @@ for (let i = 0; i < 4; i++) {
         });
     });
 }
+
+let heroImage = document.getElementById("hero-image");
+
+let heroCounter = 0;
+
+setInterval(() => {
+
+    switch(heroCounter) {
+        case 0: 
+            heroImage.style.backgroundImage = "url(../images/hero-image2.jpg)";
+        break;
+        case 1: 
+            heroImage.style.backgroundImage = "url(../images/hero-image1.webp)";
+        break;
+        case 2: 
+            heroImage.style.backgroundImage = "url(../images/hero-image3.jpg)";
+        break;
+        case 3: 
+            heroImage.style.backgroundImage = "url(../images/hero-image0.jpg)";
+        break;
+    }
+
+    heroCounter++;
+
+    if (heroCounter > 3) {
+        heroCounter = 0;
+    }
+
+}, 7000);

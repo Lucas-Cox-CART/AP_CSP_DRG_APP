@@ -79,19 +79,20 @@ header button {
   height: 20px;
 }
 
-.hero-image {
+#hero-image {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-image: url(../images/hero-image.jpg);
+  background-image: url(../images/hero-image0.jpg);
   background-position: center;
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-size: cover;
   height: 100vh;
   width: 100%;
+  transition-duration: 1s;
 }
-.hero-image p {
+#hero-image p {
   display: flex;
   justify-content: center;
   align-items: center;
