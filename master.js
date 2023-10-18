@@ -209,16 +209,3 @@ for (let i = 0; i < 4; i++) {
         });
     });
 }
-
-
-// let bugs = [];
-// let bugTexts = [];
-
-// for (let i = 0; i < 4; i++) {
-//     bugs[i] = document.getElementById(`bug${[i]}`);
-//     bugTexts[i] = document.getElementById(`bugText${[i]}`);
-
-//     bugs[i].addEventListener('mouseover', () => {
-//         bugTexts[i].style.width = "200px";
-//     });
-// }
