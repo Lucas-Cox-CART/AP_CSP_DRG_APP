@@ -180,28 +180,35 @@ window.addEventListener('resize', () => {
     navLinks[i].style.fontSize = `${width/1130}em`;
 });
 
-let bugText0_outer = document.getElementById("bugText0_outer");
-let bugText0_inner = document.getElementById("bugText0_inner");
-let bug0 = document.getElementById("bug0");
+let bugs = [];
+let bugTextOuter = [];
+let bugTextInner = [];
 
-bug0.addEventListener('mouseover', () => {
-    bugText0_inner.style.display = "flex";
-    bugText0_outer.style.width = "200px";
-    bugText0_outer.style.height = "200px";
-    bugText0_outer.style.border = "2px solid #30363d";
-    bugText0_outer.style.backgroundColor = "transparent";
-    bugText0_inner.style.opacity = "1";
-    bugText0_inner.style.fontSize = "1em";
-});
+for (let i = 0; i < 4; i++) {
+    bugs[i] = document.getElementById(`bug${[i]}`);
+    bugTextOuter[i] = document.getElementById(`bugText${[i]}_outer`);
+    bugTextInner[i] = document.getElementById(`bugText${[i]}_inner`);
 
-bug0.addEventListener('mouseout', () => {
-    bugText0_outer.style.width = "0px";
-    bugText0_outer.style.height = "0px";
-    bugText0_outer.style.border = "1px solid white";
-    bugText0_outer.style.backgroundColor = "#161b22";
-    bugText0_inner.style.opacity = "0";
-    bugText0_inner.style.fontSize = "0em";
-});
+    ['mouseover', 'mouseout'].forEach(event => {
+        bugs[i].addEventListener(event, () => {
+            if (event == "mouseover") {
+                bugTextOuter[i].style.width = "200px";
+                bugTextOuter[i].style.height = "200px";
+                bugTextOuter[i].style.border = "2px solid #30363d";
+                bugTextInner[i].style.opacity = "1";
+                bugTextInner[i].style.fontSize = "1em";
+            }
+
+            if (event == "mouseout") {
+                bugTextOuter[i].style.width = "0px";
+                bugTextOuter[i].style.height = "0px";
+                bugTextOuter[i].style.border = "1px solid white";
+                bugTextInner[i].style.opacity = "0";
+                bugTextInner[i].style.fontSize = "0em";
+            }
+        });
+    });
+}
 
 
 // let bugs = [];

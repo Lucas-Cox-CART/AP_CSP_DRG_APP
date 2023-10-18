@@ -324,20 +324,59 @@ header button {
   align-items: center;
   background-color: #161b22;
   position: relative;
-  top: 0%;
   width: 0px;
-  left: -3%;
-  border: 2px solid #30363d;
+  height: 0px;
+  border: 2px solid white;
   border-radius: 20px;
   transition: 500ms;
 }
 .creaturesShowcase .bugText * {
   color: white;
 }
-.creaturesShowcase #bugText0_inner {
+.creaturesShowcase #bugText0_outer {
+  top: 0%;
+  left: -3%;
+}
+.creaturesShowcase #bugText0_outer #bugText0_inner {
+  display: flex;
   transition: 500ms;
   max-height: 200px;
   opacity: 0;
+  font-size: 0em;
+  margin: 10px;
+}
+.creaturesShowcase #bugText1_outer {
+  left: 3%;
+}
+.creaturesShowcase #bugText1_outer #bugText1_inner {
+  display: flex;
+  transition: 500ms;
+  max-height: 200px;
+  opacity: 0;
+  font-size: 0em;
+  margin: 10px;
+}
+.creaturesShowcase #bugText2_outer {
+  left: -3%;
+}
+.creaturesShowcase #bugText2_outer #bugText2_inner {
+  display: flex;
+  transition: 500ms;
+  max-height: 200px;
+  opacity: 0;
+  font-size: 0em;
+  margin: 10px;
+}
+.creaturesShowcase #bugText3_outer {
+  left: 3%;
+}
+.creaturesShowcase #bugText3_outer #bugText3_inner {
+  display: flex;
+  transition: 500ms;
+  max-height: 200px;
+  opacity: 0;
+  font-size: 0em;
+  margin: 10px;
 }
 
 footer {
@@ -349,4 +388,38 @@ footer {
 }
 footer * {
   color: white;
+}
+
+.classTitleHolder {
+  height: 9vh;
+  display: flex;
+  justify-content: center;
+  font-size: 2em;
+  padding: 2%;
+  background-color: rgb(12, 16, 21);
+  color: white;
+}
+
+.classPageShowcase {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  width: 100%;
+  background-color: rgb(12, 16, 21);
+  border-bottom: 1px solid rgb(20, 26, 33);
+}
+.classPageShowcase img {
+  height: 100vh;
+}
+.classPageShowcase div {
+  color: white;
+  background-color: #161b22;
+  border: 2px solid #30363d;
+  border-radius: 20px;
+  width: 35%;
+  height: 80%;
+}
+.classPageShowcase div * {
+  margin: 10%;
 }/*# sourceMappingURL=style.css.map */

@@ -353,10 +353,9 @@ header {
         align-items: center;
         background-color: #161b22;
         position: relative;
-        top: 0%;
         width: 0px;
-        left: -3%;
-        border: 2px solid #30363d;
+        height: 0px;
+        border: 2px solid white;
         border-radius: 20px;
         transition: 500ms;
 
@@ -365,10 +364,57 @@ header {
         }
     }
 
-    #bugText0_inner {
-        transition: 500ms;
-        max-height: 200px;
-        opacity: 0;
+    #bugText0_outer {
+        top: 0%;
+        left: -3%;
+
+        #bugText0_inner {
+            display: flex;
+            transition: 500ms;
+            max-height: 200px;
+            opacity: 0;
+            font-size: 0em;
+            margin: 10px;
+        }
+    }
+
+    #bugText1_outer {
+        left: 3%;
+
+        #bugText1_inner {
+            display: flex;
+            transition: 500ms;
+            max-height: 200px;
+            opacity: 0;
+            font-size: 0em;
+            margin: 10px;
+        }
+    }
+
+    #bugText2_outer {
+        left: -3%;
+
+        #bugText2_inner {
+            display: flex;
+            transition: 500ms;
+            max-height: 200px;
+            opacity: 0;
+            font-size: 0em;
+            margin: 10px;
+        }
+    }
+
+    #bugText3_outer {
+        left: 3%;
+
+        #bugText3_inner {
+            display: flex;
+            transition: 500ms;
+            max-height: 200px;
+            opacity: 0;
+            font-size: 0em;
+            margin: 10px;
+        }
     }
 }
 
@@ -381,5 +427,44 @@ footer {
 
     * {
         color: white;
+    }
+}
+
+// Page 2
+
+.classTitleHolder {
+    height: 9vh;
+    display: flex;
+    justify-content: center;
+    font-size: 2em;
+    padding: 2%;
+    background-color: rgba(12,16,21,255);
+    color: white;
+}
+
+.classPageShowcase {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100%;
+    background-color: rgba(12,16,21,255);
+    border-bottom: 1px solid rgb(20, 26, 33);
+
+    img {
+        height: 100vh;
+    }
+
+    div {
+        color: white;
+        background-color: #161b22;
+        border: 2px solid #30363d;
+        border-radius: 20px;
+        width: 35%;
+        height: 80%;
+
+        * {
+            margin: 10%;
+        }
     }
 }
