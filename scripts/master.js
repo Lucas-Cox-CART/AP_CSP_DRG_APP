@@ -126,6 +126,7 @@ for (let i = 0; i < 8; i++) {
 
 }
 
+/* This just asks if the mouse is over one of the bugs and if it is, it will correspond to an animation of the textbox correlated to the bug hovered over. */
 let bugs = [];
 let bugTextOuter = [];
 let bugTextInner = [];
@@ -154,6 +155,7 @@ for (let i = 0; i < 4; i++) {
     });
 }
 
+// Simple counter and switch statement to cause hero-image on first page to automatically transition from one image to another.
 let heroImage = document.getElementById("hero-image");
 let heroCounter = 0;
 
@@ -177,11 +179,3 @@ setInterval(() => {
         heroCounter = 0;
     }
 }, 5500);
-
-/* 
-TODO:
-- Finish other pages
-- Replace Lorem Ipsum with actual text
-
-- NEEDS audio
-*/

@@ -32,7 +32,7 @@ navButton.addEventListener("click", () => {
     }
 });
 
-
+// Automatically changes navbar fontsize based on view port dimensions.
 let navLinks = [];
 
 for (let i = 0; i < 6; i++) {
@@ -44,6 +44,7 @@ for (let i = 0; i < 6; i++) {
     });
 }
 
+// Audio
 let goldButton = document.getElementById("goldButton");
 let audio = new Audio('../images/were_rich.ogg');
 
