@@ -1,36 +1,4 @@
-let width = window.innerWidth;
-let height = window.innerHeight;
-
-let navbar = document.getElementById("navbar");
-let navButton = document.getElementById("navButton");
-
-let navActive = false;
-let navAnimationRunning = false;
-
-/* This checks if the navbar is currently running an animation, if it is, then it will change the boolean to true, else it will change it to false. */
-["animationstart", "animationend"].forEach((event) => {
-    navbar.addEventListener(event, () => {
-        if (event == "animationstart") {
-            navAnimationRunning = true;
-        } else if (event == "animationend") {
-            navAnimationRunning = false;
-        }
-    });
-});
-
-/* Button listens for a click event and runs an animation depending on the state of the navbar. If it is activated, run the reverse animation, else run the normal animation. Checks if animation is running to prevent spam causing visual glitches. */
-navButton.addEventListener("click", () => {
-    if (navAnimationRunning == false) {
-        (navActive == false) ? navActive = true : navActive = false;
-        if (navActive == false) {
-            navbar.style.animationName = "navSlideReverse";
-        } else if (navActive == true) {
-            navbar.style.animationName = "navSlide";
-        } else {
-            throw console.error("you suck at coding");
-        }
-    }
-});
+import "./fontSize.js";
 
 /* This was incredible painful to make. Left and Right buttons cause carousel items to rotate showing different images. If an animation ISN'T running, it will allow the code within the listener to run. When the listener runs, the animation boolean is switched and a timeout for 1s (which is also the length of the animation) is activated. For the left button, Item3 is brought to the Zeroth slot in the array pushing everything forwards. For the right button, Item0 is brought to the Fourth slot in the array causing the rest of the items to be pulled forwards. Transition durations make the animations run smooth and allows for offscreen elements to shift from one side to another without being seen. */
 
@@ -98,6 +66,7 @@ function missionAnimationStyles(i) {
     missionIcons[i].style.width = "0%";
     missionDescriptions[i].style.opacity = "1";
     missionDescriptions[i].style.width = "100%";
+    missionDescriptions[i].style.height = "100%";
     missionDescriptions[i].style.margin = "10%";
 }
 
@@ -107,6 +76,7 @@ function missionAnimationStylesReverse(i) {
     missionIcons[i].style.width = "100%";
     missionDescriptions[i].style.opacity = "0";
     missionDescriptions[i].style.width = "0%";
+    missionDescriptions[i].style.height = "0%";
     missionDescriptions[i].style.margin = "0%";
 }
 
@@ -156,17 +126,6 @@ for (let i = 0; i < 8; i++) {
 
 }
 
-let navLinks = [];
-
-for (let i = 0; i < 8; i++) {
-    navLinks[i] = document.getElementById(`navLink${[i]}`);
-    navLinks[i].style.fontSize = `${width/1130}em`;
-}
-
-window.addEventListener('resize', () => {
-    navLinks[i].style.fontSize = `${width/1130}em`;
-});
-
 let bugs = [];
 let bugTextOuter = [];
 let bugTextInner = [];
@@ -178,8 +137,8 @@ for (let i = 0; i < 4; i++) {
     ['mouseover', 'mouseout'].forEach(event => {
         bugs[i].addEventListener(event, () => {
             if (event == "mouseover") {
-                bugTextOuter[i].style.width = "200px";
-                bugTextOuter[i].style.height = "200px";
+                bugTextOuter[i].style.width = "300px";
+                bugTextOuter[i].style.height = "300px";
                 bugTextOuter[i].style.border = "2px solid #30363d";
                 bugTextInner[i].style.opacity = "1";
                 bugTextInner[i].style.fontSize = "1em";
@@ -201,10 +160,10 @@ let heroCounter = 0;
 setInterval(() => {
     switch(heroCounter) {
         case 0: 
-            heroImage.style.backgroundImage = "url(../images/hero-image2.jpg)";
+            heroImage.style.backgroundImage = "url(../images/hero-image1.jpg)";
         break;
         case 1: 
-            heroImage.style.backgroundImage = "url(../images/hero-image1.webp)";
+            heroImage.style.backgroundImage = "url(../images/hero-image2.jpg)";
         break;
         case 2: 
             heroImage.style.backgroundImage = "url(../images/hero-image3.jpg)";
@@ -217,17 +176,12 @@ setInterval(() => {
     if (heroCounter > 3) {
         heroCounter = 0;
     }
-}, 7000);
+}, 5500);
 
 /* 
 TODO:
 - Finish other pages
 - Replace Lorem Ipsum with actual text
-
-- Get new/different images (NO LOW-RESOLUTION IMAGES)
-- Replace debugging colors
-
-- Font size, font family
 
 - NEEDS audio
 */

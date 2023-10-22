@@ -243,30 +243,33 @@ header {
         height: 80%;
         width: 70%;
         position: absolute;
+
+        a {
+            
+                    .carouselImage {
+                        height: 77vh;
+                    }
+        }
     }
 
     #carouselItem1 {
         left: -100%;    
-        background-color: magenta;
         z-index: 3;
         transition-duration: 1s;
     }
 
     #carouselItem2 {
         left: 15%;
-        background-color: aqua;
         transition-duration: 1s;   
     }
 
     #carouselItem3 {
         left: 100%;
-        background-color: crimson;
         transition-duration: 1s;
     }
 
     #carouselItem4 {
         left: 100%;
-        background-color: orange;
         transition-duration: 1s;
     }
 }
@@ -467,6 +470,10 @@ footer {
     * {
         color: white;
     }
+
+    img {
+        height: 100%;
+    }
 }
 
 // Page 2
@@ -518,4 +525,14 @@ footer {
     background-color: rgba(12,16,21,255);
     border-bottom: 1px solid rgb(20, 26, 33);
     color: white;
+}
+
+#goldButton {
+    transition: 1100ms;
+    filter: none;    
+}
+
+#goldButton:hover {
+    transition: 1100ms;
+    filter: drop-shadow(5px -5px 10px rgb(255, 208, 0)) drop-shadow(-5px 5px 10px rgb(255, 208, 0));
 }
