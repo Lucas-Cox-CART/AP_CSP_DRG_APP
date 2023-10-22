@@ -11,7 +11,8 @@ nav {
   align-items: center;
   height: 95vh;
   width: 15%;
-  background-color: yellow;
+  background-color: rgb(20, 26, 33);
+  border-right: 2px solid #30363d;
   position: fixed;
   left: -20%;
   top: 5vh;
@@ -27,17 +28,17 @@ nav * {
   align-items: center;
   height: 10%;
   width: 60%;
-  color: black;
   text-decoration: none;
   -webkit-user-select: none;
      -moz-user-select: none;
           user-select: none;
+  color: white;
 }
 nav *:active {
-  color: black;
+  color: white;
 }
 nav *:visited {
-  color: black;
+  color: white;
 }
 
 @keyframes navSlide {
@@ -127,6 +128,7 @@ header button {
 
 .classShowcase {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   height: 100vh;
@@ -134,13 +136,45 @@ header button {
   background-color: rgb(12, 16, 21);
   border-bottom: 1px solid rgb(20, 26, 33);
 }
-.classShowcase p {
+.classShowcase article {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  height: 50%;
+  width: 100%;
+}
+.classShowcase article span {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 25%;
+}
+.classShowcase article span #classHomeLeft {
+  left: 2%;
+}
+.classShowcase article span #classHomeRight {
+  left: 78%;
+}
+.classShowcase article span div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #161b22;
+  border: 1px solid #30363d;
+  border-radius: 15px;
+  width: 90%;
+  height: 80%;
+}
+.classShowcase article span div p {
   color: white;
   margin: 10%;
 }
-.classShowcase img {
-  width: 50%;
-  height: 100%;
+.classShowcase article span img {
+  height: 45%;
+  position: absolute;
 }
 
 .show-right {

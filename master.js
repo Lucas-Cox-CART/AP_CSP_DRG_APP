@@ -32,8 +32,6 @@ navButton.addEventListener("click", () => {
     }
 });
 
-
-
 /* This was incredible painful to make. Left and Right buttons cause carousel items to rotate showing different images. If an animation ISN'T running, it will allow the code within the listener to run. When the listener runs, the animation boolean is switched and a timeout for 1s (which is also the length of the animation) is activated. For the left button, Item3 is brought to the Zeroth slot in the array pushing everything forwards. For the right button, Item0 is brought to the Fourth slot in the array causing the rest of the items to be pulled forwards. Transition durations make the animations run smooth and allows for offscreen elements to shift from one side to another without being seen. */
 
 let carouselButtonLeft = document.getElementById("carousel-buttonLeft");
@@ -50,7 +48,6 @@ Array.prototype.move = function (from, to) {
 for (let i = 0; i < 4; i++) {
     carouselItem[i] = document.getElementById(`carouselItem${[i+1]}`);
 }
-
 
 carouselButtonLeft.addEventListener("click", () => {
     if (carouselAnimationRunning == false) {
@@ -84,8 +81,6 @@ carouselButtonRight.addEventListener("click", () => {
     }
 });
 
-
-
 /* this next mission segment took me over an hour. desired state is the state asking if the cursor is hovering over the mission element. current state is asking if an animation is currently running. transition state picks up the desired state and plays the animation and refreshes the desired state, acts like a 'state-manager'. animations are simple keyframes in css. a bunch of other trickery like if currentState is inactive aka if a animation isn't running, that means one must have finished and transitionState will be emptied and prepared for another desiredState. */
 
 let missions = [];
@@ -97,8 +92,25 @@ let transitionState = [];
 let missionIcons = [];
 let missionDescriptions = [];
 
-for (let i = 0; i < 8; i++) {
+function missionAnimationStyles(i) {
+    missions[i].style.animationName = "missionHover";
+    missionIcons[i].style.opacity = "0";
+    missionIcons[i].style.width = "0%";
+    missionDescriptions[i].style.opacity = "1";
+    missionDescriptions[i].style.width = "100%";
+    missionDescriptions[i].style.margin = "10%";
+}
 
+function missionAnimationStylesReverse(i) {
+    missions[i].style.animationName = "missionNormal";
+    missionIcons[i].style.opacity = "1";
+    missionIcons[i].style.width = "100%";
+    missionDescriptions[i].style.opacity = "0";
+    missionDescriptions[i].style.width = "0%";
+    missionDescriptions[i].style.margin = "0%";
+}
+
+for (let i = 0; i < 8; i++) {
     missions[i] = document.getElementById(`mission${[i]}`);
 
     desiredState[i] = "";
@@ -117,54 +129,29 @@ for (let i = 0; i < 8; i++) {
     });
 
     setInterval(() => {
-
         if (transitionState[i] == "") {
             transitionState[i] = desiredState[i];
         }
-
         if (transitionState[i] == 0 && currentState[i] == "inactive") {
-
-            missions[i].style.animationName = "missionNormal";
-
-            missionIcons[i].style.opacity = "1";
-            missionIcons[i].style.width = "100%";
-            missionDescriptions[i].style.opacity = "0";
-            missionDescriptions[i].style.width = "0%";
-
+            missionAnimationStylesReverse(i);
             currentState[i] = "active";
             setTimeout(() => {
                 currentState[i] = "inactive";
                 transitionState[i] = "";
             }, 16);
         }
-
         if (transitionState[i] == 1 && currentState[i] == "inactive") {
-
-            missions[i].style.animationName = "missionHover";
-
-            missionIcons[i].style.opacity = "0";
-            missionIcons[i].style.width = "0%";
-            missionDescriptions[i].style.opacity = "1";
-            missionDescriptions[i].style.width = "100%";
-
+            missionAnimationStyles(i);
             currentState[i] = "active";
             setTimeout(() => {
                 currentState[i] = "inactive";
                 transitionState[i] = "";
             }, 600);
         }
-
         if (currentState[i] == "inactive") {
             transitionState[i] = "";
-
-            missions[i].style.animationName = "missionNormal";
-
-            missionIcons[i].style.opacity = "0";
-            missionIcons[i].style.width = "100%";
-            missionDescriptions[i].style.opacity = "1";
-            missionDescriptions[i].style.width = "0%";
+            missionAnimationStylesReverse(i);
         }
-
     }, 16);
 
 }
@@ -188,7 +175,6 @@ for (let i = 0; i < 4; i++) {
     bugs[i] = document.getElementById(`bug${[i]}`);
     bugTextOuter[i] = document.getElementById(`bugText${[i]}_outer`);
     bugTextInner[i] = document.getElementById(`bugText${[i]}_inner`);
-
     ['mouseover', 'mouseout'].forEach(event => {
         bugs[i].addEventListener(event, () => {
             if (event == "mouseover") {
@@ -198,7 +184,6 @@ for (let i = 0; i < 4; i++) {
                 bugTextInner[i].style.opacity = "1";
                 bugTextInner[i].style.fontSize = "1em";
             }
-
             if (event == "mouseout") {
                 bugTextOuter[i].style.width = "0px";
                 bugTextOuter[i].style.height = "0px";
@@ -211,11 +196,9 @@ for (let i = 0; i < 4; i++) {
 }
 
 let heroImage = document.getElementById("hero-image");
-
 let heroCounter = 0;
 
 setInterval(() => {
-
     switch(heroCounter) {
         case 0: 
             heroImage.style.backgroundImage = "url(../images/hero-image2.jpg)";
@@ -230,11 +213,21 @@ setInterval(() => {
             heroImage.style.backgroundImage = "url(../images/hero-image0.jpg)";
         break;
     }
-
     heroCounter++;
-
     if (heroCounter > 3) {
         heroCounter = 0;
     }
-
 }, 7000);
+
+/* 
+TODO:
+- Finish other pages
+- Replace Lorem Ipsum with actual text
+
+- Get new/different images (NO LOW-RESOLUTION IMAGES)
+- Replace debugging colors
+
+- Font size, font family
+
+- NEEDS audio
+*/
