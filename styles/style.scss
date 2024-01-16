@@ -384,8 +384,20 @@ header {
             transition: 500ms;
         }
 
-        img:hover {
-            filter: drop-shadow(10px -10px 10px black) drop-shadow(-10px 10px 10px black);
+        #bug0:hover {
+            filter: drop-shadow(10px -10px 10px rgb(47, 117, 0)) drop-shadow(-10px 10px 10px rgb(47, 117, 0));
+        }
+
+        #bug1:hover {
+            filter: drop-shadow(10px -10px 10px rgb(150, 47, 0)) drop-shadow(-10px 10px 10px rgb(150, 47, 0));
+        }
+
+        #bug2:hover {
+            filter: drop-shadow(10px -10px 10px rgb(132, 161, 0)) drop-shadow(-10px 10px 10px rgb(132, 161, 0));
+        }
+
+        #bug3:hover {
+            filter: drop-shadow(10px -10px 10px rgb(97, 60, 60)) drop-shadow(-10px 10px 10px rgb(97, 60, 60));
         }
     }
 
@@ -536,3 +548,10 @@ footer {
     transition: 1100ms;
     filter: drop-shadow(5px -5px 10px rgb(255, 208, 0)) drop-shadow(-5px 5px 10px rgb(255, 208, 0));
 }
+
+.gravitas-one-regular {
+    font-family: "Gravitas One", serif;
+    font-weight: 400;
+    font-style: normal;
+  }
+  

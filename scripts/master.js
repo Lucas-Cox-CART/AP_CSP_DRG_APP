@@ -23,6 +23,7 @@ carouselButtonLeft.addEventListener("click", () => {
         carouselItem.move(3,0);
         carouselItem[0].style.transitionDuration = "0s";
         carouselItem[0].style.left = "-70%";
+        carouselItem[0].style.display = "inline";
         carouselItem[1].style.left = "15%";
         carouselItem[2].style.left = "100%";
         carouselItem[3].style.left = "100%";
@@ -39,6 +40,8 @@ carouselButtonRight.addEventListener("click", () => {
         carouselItem.move(0,3);
         carouselItem[3].style.transitionDuration = "0s";
         carouselItem[0].style.left = "-70%";
+        carouselItem[3].style.display = "none";
+        carouselItem[2].style.display = "inline";
         carouselItem[1].style.left = "15%";
         carouselItem[2].style.left = "100%";
         carouselItem[3].style.left = "100%";
@@ -128,6 +131,7 @@ for (let i = 0; i < 8; i++) {
 
 /* This just asks if the mouse is over one of the bugs and if it is, it will correspond to an animation of the textbox correlated to the bug hovered over. */
 let bugs = [];
+let bugsActivated = [false, false, false, false];
 let bugTextOuter = [];
 let bugTextInner = [];
 
@@ -135,23 +139,37 @@ for (let i = 0; i < 4; i++) {
     bugs[i] = document.getElementById(`bug${[i]}`);
     bugTextOuter[i] = document.getElementById(`bugText${[i]}_outer`);
     bugTextInner[i] = document.getElementById(`bugText${[i]}_inner`);
-    ['mouseover', 'mouseout'].forEach(event => {
-        bugs[i].addEventListener(event, () => {
-            if (event == "mouseover") {
-                bugTextOuter[i].style.width = "300px";
-                bugTextOuter[i].style.height = "300px";
-                bugTextOuter[i].style.border = "2px solid #30363d";
-                bugTextInner[i].style.opacity = "1";
-                bugTextInner[i].style.fontSize = "1em";
-            }
-            if (event == "mouseout") {
+
+    bugs[i].addEventListener("click", () => {
+
+        switch(bugsActivated[i]) {
+
+            case true:
+                bugsActivated[i] = false;
                 bugTextOuter[i].style.width = "0px";
                 bugTextOuter[i].style.height = "0px";
                 bugTextOuter[i].style.border = "1px solid white";
                 bugTextInner[i].style.opacity = "0";
                 bugTextInner[i].style.fontSize = "0em";
-            }
-        });
+            break;
+
+            case false:
+                bugsActivated[i] = true;
+                bugTextOuter[i].style.width = "300px";
+                bugTextOuter[i].style.height = "300px";
+                bugTextOuter[i].style.border = "2px solid #30363d";
+                bugTextInner[i].style.opacity = "1";
+                bugTextInner[i].style.fontSize = "1em";
+            break;
+
+            default:
+                bugsActivated[i] = false;
+                bugTextOuter[i].style.width = "0px";
+                bugTextOuter[i].style.height = "0px";
+                bugTextOuter[i].style.border = "1px solid white";
+                bugTextInner[i].style.opacity = "0";
+                bugTextInner[i].style.fontSize = "0em";
+        }
     });
 }
 
